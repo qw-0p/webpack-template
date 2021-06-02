@@ -38,17 +38,5 @@ module.exports = merge(base, {
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[id].css'
     })
-  ],
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin(), '...'],
-    runtimeChunk: {
-      name: 'runtime'
-    }
-  },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000
-  }
+  ]
 })

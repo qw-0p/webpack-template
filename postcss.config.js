@@ -1,7 +1,11 @@
+const postcssPresetEnv = require('postcss-preset-env')
+const cssnano = require('cssnano')
+
 module.exports = {
-  plugins: {
-    'postcss-preset-env': {
-      browsers: 'last 2 versions'
-    }
-  }
+  plugins: [
+    cssnano({
+      preset: 'default'
+    }),
+    postcssPresetEnv({ browsers: 'last 2 versions', autoprefixer: { grid: true } })
+  ]
 }
