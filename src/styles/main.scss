@@ -1,14 +1,14 @@
-@import 'utils/libs';
-@import 'utils/vars';
-@import 'utils/mixins';
-@import 'utils/fonts';
-@import 'utils/reset';
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
 
 html {
-  line-height: $mainLineHeight;
-  font-size: $mainFontSize;
-  color: $mainFontColor;
   height: 100%;
+  font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  color: $mainFontColor;
   @media screen and (max-width: $desktopWidth) {
     font-size: 16px;
   }
@@ -24,15 +24,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: $mainFont;
-  font-size: $mainFontSize;
   font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: $mainFontSize;
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -51,9 +49,9 @@ a {
 
 ul,
 li {
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  list-style-type: none;
 }
 
 section,
@@ -75,8 +73,8 @@ section,
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 100vh;
   min-width: 100vh;
+  min-height: 100vh;
 }
 
 .content-wrapper {
@@ -86,10 +84,10 @@ section,
 }
 
 .container {
-  width: 100%;
-  flex: 0 0 auto;
   position: relative;
+  flex: 0 0 auto;
   margin: 0 auto;
+  width: 100%;
   max-width: $desktopWidth;
   @media screen and (max-width: $smDesktopWidth) {
     max-width: $tableWidth;

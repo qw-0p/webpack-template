@@ -80,10 +80,10 @@ time,
 mark,
 audio,
 video {
+  vertical-align: baseline;
   margin: 0;
   padding: 0;
   font-size: 100%;
-  vertical-align: baseline;
 }
 
 // Links
@@ -110,19 +110,21 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 400;
   font-size: 100%;
-  font-weight: normal;
 }
 
 // Default
 html {
   box-sizing: border-box;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 :focus {
   outline: 0;
 }
@@ -130,9 +132,10 @@ html {
 img,
 audio,
 video {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
+
 audio,
 canvas,
 iframe,
@@ -141,28 +144,29 @@ img,
 svg {
   vertical-align: middle;
 }
+
 iframe {
   border: 0;
 }
 
 // From
 textarea {
-  resize: none; /*remove the resize handle on the bottom right*/
-  overflow: auto;
   vertical-align: top;
+  overflow: auto;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
+  resize: none;
 }
+
 input,
 textarea,
 select,
 button {
+  margin: 0;
   outline: none;
   border: none;
   font-size: 100%;
-  margin: 0;
 }
+
 button,
 input {
   line-height: normal;
@@ -173,6 +177,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 td,
 th {
   padding: 0;

@@ -3,6 +3,7 @@ const base = require('./webpack.base')
 
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
+const StylelintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = merge(base, {
   mode: 'development',
@@ -31,5 +32,5 @@ module.exports = merge(base, {
       }
     ]
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin(), new StylelintPlugin()]
 })

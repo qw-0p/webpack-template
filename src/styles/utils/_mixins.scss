@@ -15,22 +15,6 @@
   height: $height;
 }
 
-// placeholder helper
-@mixin placeholder {
-  ::-webkit-input-placeholder {
-    @content;
-  }
-  :-moz-placeholder {
-    @content;
-  }
-  ::-moz-placeholder {
-    @content;
-  }
-  :-ms-input-placeholder {
-    @content;
-  }
-}
-
 /*
   By default template support only modern format fonts
   Without svg. Only: .woff, .woffs
@@ -52,14 +36,13 @@
 
 // Default: For modern format fonts
 // Files Required: .woff, .woffs
-
-@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false) {
+@mixin font-face($asset-pipeline: false, $style: normal, $weight: normal) {
+  font-style: $style;
   @font-face {
+    src: url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.woff2") format("woff2");
     font-family: $font-family;
     font-weight: $weight;
-    font-style: $style;
-
-    src: url('#{$file-path}.woff') format('woff'), url('#{$file-path}.woff2') format('woff2');
   }
 }
 
