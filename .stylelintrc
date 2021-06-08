@@ -564,7 +564,6 @@
 		"declaration-property-value-whitelist": null,
 		"font-family-name-quotes": "always-unless-keyword",
 		"font-family-no-duplicate-names": true,
-		"font-weight-notation": "numeric",
 		"function-blacklist": null,
 		"function-calc-no-unspaced-operator": true,
 		"function-comma-newline-after": "always-multi-line",
@@ -582,7 +581,12 @@
 		"function-url-scheme-whitelist": null,
 		"function-whitelist": null,
 		"function-whitespace-after": "always",
-		"indentation": 2,
+		"indentation": [
+			2,
+			"ignore": [
+				"value"
+			] 
+		],
 		"keyframe-declaration-no-important": true,
 		"length-zero-no-unit": true,
 		"max-empty-lines": 1,
