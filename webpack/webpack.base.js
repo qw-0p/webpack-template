@@ -1,7 +1,9 @@
-const paths = require('./paths')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const PrettierPlugin = require('prettier-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const paths = require('./paths')
 
 module.exports = {
   entry: ['/index.js'],
@@ -48,8 +50,13 @@ module.exports = {
       ]
     }),
     new HtmlWebpackPlugin({
-      template: paths.src + '/index.html',
+      template: `${paths.src}/index.html`,
       filename: 'index.html'
-    })
+    }),
+    new ESLintPlugin({
+      files: ['.', 'src', 'webpack'],
+      formatter: 'table'
+    }),
+    new PrettierPlugin()
   ]
 }
