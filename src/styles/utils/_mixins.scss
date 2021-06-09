@@ -39,8 +39,8 @@
 @mixin font-face($asset-pipeline: false, $style: normal, $weight: normal) {
   font-style: $style;
   @font-face {
-    src: url("#{$file-path}.woff") format("woff"),
-      url("#{$file-path}.woff2") format("woff2");
+    src: url('#{$file-path}.woff') format('woff'),
+      url('#{$file-path}.woff2') format('woff2');
     font-family: $font-family;
     font-weight: $weight;
   }
