@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // px to rem
 @function rem($pixels, $context: $mainFontSize) {
   @if (unitless($pixels)) {
@@ -6,7 +8,7 @@
   @if (unitless($context)) {
     $context: $context * 1px;
   }
-  @return $pixels / $context * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 // size to one line
@@ -44,6 +46,17 @@
     font-family: $font-family;
     font-weight: $weight;
   }
+}
+
+// Adaptive-font
+$maxWidth: math.div($desktopWidth, 1px);
+@mixin adaptive-font($pcFontSize, $mobFontSize) {
+  $addSize: $pcFontSize - $mobFontSize;
+  $maxWidth: $maxWidth - 320;
+
+  font-size: calc(
+    #{$mobFontSize * 1px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
 }
 
 // For Modern format fonts + .svg
